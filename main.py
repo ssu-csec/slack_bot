@@ -108,7 +108,6 @@ def send_slack(notice):
     link = notice[1]
     message = "<" + link + " | " + title + ">"
     print(message)
-    return
     post_to_slack(message)
 
 
