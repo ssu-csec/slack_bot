@@ -1,8 +1,8 @@
 import json
 import requests
 
-def post_to_slack(message):
-    webhook_url = 'https://hooks.slack.com/services/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'
+
+def post_to_slack(message, webhook_url):
     slack_data = json.dumps({'text': message})
     response = requests.post(
         webhook_url, data=slack_data,
