@@ -1,18 +1,18 @@
-import pickle
+from pickle import load, dump
 
 
-def load_list(save_path):
+def load_pickle(save_path):
     try:
         f = open(save_path, "rb")
     except FileNotFoundError:
         return None
 
-    loading_list = pickle.load(f)
+    load_content = load(f)
     f.close()
-    return loading_list
+    return load_content
 
 
-def save_list(saving_list, save_path):
+def save_pickle(save_content, save_path):
     f = open(save_path, "wb")
-    pickle.dump(saving_list, f)
+    dump(save_content, f)
     f.close()
