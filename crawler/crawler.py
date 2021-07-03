@@ -1,12 +1,12 @@
 from .utils import get_html_attributes
-from .const import Url
+from const import Url
 
 
 class Crawler:
 
     @staticmethod
     def crawl_grad_notice():
-        attrs = get_html_attributes(Url.grad_home, 'tr')
+        attrs = get_html_attributes(Url.notices["grad"], 'tr')
         notice_list = list()
 
         for attr in attrs[1:]:
@@ -27,7 +27,7 @@ class Crawler:
 
     @staticmethod
     def crawl_ssu_notice():
-        attrs = get_html_attributes(Url.ssu_home, 'div.notice_col3')
+        attrs = get_html_attributes(Url.notices["ssu"], 'div.notice_col3')
         notice_list = list()
 
         for attr in attrs[1:]:
@@ -53,7 +53,7 @@ class Crawler:
 
         for attr in attrs[1:]:
             # 링크 가져오기
-            title_link = Url.sw_homepage + attr.find('a')['href'].replace("..", "")
+            title_link = Url.homepages["sw"] + attr.find('a')['href'].replace("..", "")
 
             # 타이틀 가져오기
             classify = str(attr.find('td'))
@@ -74,12 +74,12 @@ class Crawler:
 
     @classmethod
     def crawl_sw_grad_notice(cls):
-        return cls.crawl_sw_notice(Url.sw_grad)
+        return cls.crawl_sw_notice(Url.notices["sw_grad"])
 
     @classmethod
     def crawl_sw_dept_notice(cls):
-        return cls.crawl_sw_notice(Url.sw_dept)
+        return cls.crawl_sw_notice(Url.notices["sw_dept"])
 
     @classmethod
     def crawl_sw_job_notice(cls):
-        return cls.crawl_sw_notice(Url.sw_job, announce_only=False)
+        return cls.crawl_sw_notice(Url.notices["sw_job"], announce_only=False)
