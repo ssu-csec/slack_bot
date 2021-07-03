@@ -3,8 +3,8 @@ Slack bot codes
 
 
 
-#Usage
-##Webhook
+# Usage
+## Webhook
 1. generate webhook url (channel or DM)
 
     `https://api.slack.com/apps/<Channel ID>/incoming-webhooks?`
@@ -12,10 +12,10 @@ Slack bot codes
 2. manage to webhooks dicts: run webhook.py
 
 
-##Post
+## Post
 use **post_to_slack(message, webhook_url)** in /bot/post.py
 
 
 
-#Issue
+# Issue
 Creates **Github issue** or contacts to **gigacms@gmail.com**
