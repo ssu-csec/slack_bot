@@ -7,7 +7,9 @@ Slack bot codes
 ## Webhook
 1. generate webhook url (channel or DM)
 
-    `https://api.slack.com/apps/<Channel ID>/incoming-webhooks?`
+    `https://api.slack.com/apps/<Workspace ID>/incoming-webhooks?`
+    
+    \* WorkSpace ID is unique string
 
 2. manage to webhooks dicts: run webhook.py
 
