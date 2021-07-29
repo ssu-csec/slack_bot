@@ -1,11 +1,10 @@
 from misc.pickle_io import load_pickle
-from os import getcwd
 
 
 class FilePath:
-    slackbot = getcwd()
-    webhook = slackbot + "webhooks.pkl"
-    crawler = slackbot + "/crawler"
+    root = "/home/20170335/slack_bot"
+    webhook = root + "/webhooks.pkl"
+    crawler = root + "/crawler"
     crawler_data = {
 
         "grad_info": crawler + "/data/grad_home_notice.list",
@@ -31,8 +30,9 @@ class Url:
     }
 
     webhooks = load_pickle(FilePath.webhook)   # Secret file
-    grad_announce_webhook = webhooks['grad_announce']
-    ssu_announce_webhook = webhooks['ssu_announce']
-    my_dm_webhook = webhooks['liberty_dm']
-    sc_announce_webhook = webhooks['sc_announce']
+    print(FilePath.webhook)
+#    grad_announce_webhook = webhooks['grad_announce']
+#    ssu_announce_webhook = webhooks['ssu_announce']
+#    my_dm_webhook = webhooks['liberty_dm']
+#    sc_announce_webhook = webhooks['sc_announce']
 

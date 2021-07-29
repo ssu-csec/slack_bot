@@ -1,1 +1,1 @@
-from .pickle_io import save_list, load_list
+from .pickle_io import save_pickle, load_pickle

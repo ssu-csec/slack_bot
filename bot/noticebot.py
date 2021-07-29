@@ -1,7 +1,7 @@
 from time import sleep
 import threading
 
-from misc.pickle_io import load_list, save_list
+from misc.pickle_io import load_pickle, save_pickle
 from crawler.utils import merge_to_anchor, find_new_notice
 from .post import post_to_slack
 
@@ -25,19 +25,19 @@ class NoticeBot(threading.Thread):
 
     def run(self):
         while True:
-            past_notice = load_list(self.info_path)
+            past_notice = load_pickle(self.info_path)
             current_notice = self.get_notice_list()
 
             if past_notice is None:
                 past_notice = current_notice
                 self.announce_notices_to_slack(current_notice, self.webhook_url)
-                save_list(current_notice, self.info_path)
+                save_pickle(current_notice, self.info_path)
 
             else:
                 new_notices = find_new_notice(past_notice, current_notice)
 
                 if new_notices is not []:
                     self.announce_notices_to_slack(new_notices, self.webhook_url)
-                    save_list(current_notice, self.info_path)
+                    save_pickle(current_notice, self.info_path)
 
             sleep(self.seek_time)
