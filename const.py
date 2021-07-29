@@ -32,4 +32,7 @@ class Url:
 
     webhooks = load_pickle(FilePath.webhook)   # Secret file
     grad_announce_webhook = webhooks['grad_announce']
+    ssu_announce_webhook = webhooks['ssu_announce']
     my_dm_webhook = webhooks['liberty_dm']
+    sc_announce_webhook = webhooks['sc_announce']
+
