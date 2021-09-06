@@ -10,6 +10,10 @@
           <option name="url" value="https://github.com/ssu-csec/jni-callback.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="git@github.com:kordood/jpype-example.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="C:\Users\Liberty\PycharmProjects" />
