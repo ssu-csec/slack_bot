@@ -1,4 +1,4 @@
-if __name__ == '__main__':
+def run():
     if __package__ is None:
         import sys
         from os import path
@@ -9,7 +9,7 @@ if __name__ == '__main__':
         from const import Url, FilePath
     else:
         from bot.noticebot import NoticeBot
-        from .crawler.crawler import Crawler
+        from crawler.crawler import Crawler
         from const import Url, FilePath
 
     path = FilePath
@@ -33,3 +33,6 @@ if __name__ == '__main__':
     for bot in bot_list:
         bot.join()
 
+
+if __name__ == '__main__':
+	run()
