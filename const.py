@@ -1,8 +1,9 @@
+import os
 from misc.pickle_io import load_pickle
 
 
 class FilePath:
-    root = "/home/20170335/slack_bot"
+    root, _ = os.path.split(__file__)
     webhook = root + "/webhooks.pkl"
     crawler = root + "/crawler"
     crawler_data = {
